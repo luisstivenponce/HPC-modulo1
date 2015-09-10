@@ -21,30 +21,18 @@ int main(){
   printf("\n");
   inimatriz(M2);
   
+  printf("\n");
   for(i=0;i < tama; i++){
   	for(c=0;c < tama; c++){
       numero = 0;
   		for(j=0;j < tama; j++){
-        if((i+c) < tama){
-        		numero = numero + M1[c+i][j] * M2[j][c+i]; 
-        	}
-        if((i+c) == tama){
-        numero = numero + M1[c+i-1][j] * M2[j][c+i-1];
-        }
-        if((i+c) == tama+1){
-        numero = numero + M1[c+i-2][j] * M2[j][c+i-2];
-        }
+        		numero = numero + M1[i][j] * M2[j][c];  	
   		}
       M3[i][c] = numero;
+      printf("%i ",M3[i][c]);
   	}
+    printf("\n");
   }
-  printf("\n");
- for(int c=0;c < tama; c++){
-  		for(int j=0;j < tama; j++){
-        printf("%i ", M3[c][j]);
-  		} 
-   printf("\n");
- }
   
 return 0;
 }
