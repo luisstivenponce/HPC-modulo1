@@ -1,0 +1,50 @@
+#include<stdio.h>
+#include<stdlib.h>
+#define tama 3
+
+void inimatriz(int M[tama][tama]){
+int i = 0, j = 0;
+  srand((unsigned) time(NULL));
+  for(i = 0;i < tama; i++){
+    for(j = 0; j < tama; j++){
+    M[i][j] = rand() % 3; 
+      printf("%i ", M[i][j]);
+    }
+    printf("\n");
+  }
+}
+
+int main(){
+  int M1[tama][tama],M2[tama][tama],M3[tama][tama];
+  int i=0, j=0, c=0, numero = 0;
+  inimatriz(M1);
+  printf("\n");
+  inimatriz(M2);
+  
+  for(i=0;i < tama; i++){
+  	for(c=0;c < tama; c++){
+      numero = 0;
+  		for(j=0;j < tama; j++){
+        if((i+c) < tama){
+        		numero = numero + M1[c+i][j] * M2[j][c+i]; 
+        	}
+        if((i+c) == tama){
+        numero = numero + M1[c+i-1][j] * M2[j][c+i-1];
+        }
+        if((i+c) == tama+1){
+        numero = numero + M1[c+i-2][j] * M2[j][c+i-2];
+        }
+  		}
+      M3[i][c] = numero;
+  	}
+  }
+  printf("\n");
+ for(int c=0;c < tama; c++){
+  		for(int j=0;j < tama; j++){
+        printf("%i ", M3[c][j]);
+  		} 
+   printf("\n");
+ }
+  
+return 0;
+}
