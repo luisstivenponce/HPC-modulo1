@@ -1,0 +1,385 @@
+---------------------------------------------------------------
+Indice de ejecucion: 1
+Tamaño del vector: 1
+tiempo de proceso Secuencial: 0,000001 segundos
+Tiempo de paralelo basico: 0,091117 segundos
+
+Los Vectores son iguales
+Tiempo de proceso con variable constante y Caching: 0,000264 segundos
+
+Los Vectores son iguales
+Tiempo de proceso con Tiles: 0,000264 segundos
+Los Vectores son diferentes
+---------------------------------------------------------------
+Indice de ejecucion: 2
+Tamaño del vector: 2
+tiempo de proceso Secuencial: 0,000000 segundos
+Tiempo de paralelo basico: 0,000266 segundos
+
+Los Vectores son iguales
+Tiempo de proceso con variable constante y Caching: 0,000256 segundos
+
+Los Vectores son iguales
+Tiempo de proceso con Tiles: 0,000252 segundos
+Los Vectores son diferentes
+---------------------------------------------------------------
+Indice de ejecucion: 3
+Tamaño del vector: 4
+tiempo de proceso Secuencial: 0,000001 segundos
+Tiempo de paralelo basico: 0,000265 segundos
+
+Los Vectores son iguales
+Tiempo de proceso con variable constante y Caching: 0,000255 segundos
+
+Los Vectores son iguales
+Tiempo de proceso con Tiles: 0,000251 segundos
+Los Vectores son diferentes
+---------------------------------------------------------------
+Indice de ejecucion: 4
+Tamaño del vector: 8
+tiempo de proceso Secuencial: 0,000001 segundos
+Tiempo de paralelo basico: 0,000265 segundos
+
+Los Vectores son iguales
+Tiempo de proceso con variable constante y Caching: 0,000255 segundos
+
+Los Vectores son iguales
+Tiempo de proceso con Tiles: 0,000256 segundos
+Los Vectores son diferentes
+---------------------------------------------------------------
+Indice de ejecucion: 5
+Tamaño del vector: 16
+tiempo de proceso Secuencial: 0,000001 segundos
+Tiempo de paralelo basico: 0,000257 segundos
+
+Los Vectores son iguales
+Tiempo de proceso con variable constante y Caching: 0,000249 segundos
+
+Los Vectores son iguales
+Tiempo de proceso con Tiles: 0,000248 segundos
+Los Vectores son diferentes
+---------------------------------------------------------------
+Indice de ejecucion: 6
+Tamaño del vector: 32
+tiempo de proceso Secuencial: 0,000001 segundos
+Tiempo de paralelo basico: 0,000264 segundos
+
+Los Vectores son iguales
+Tiempo de proceso con variable constante y Caching: 0,000250 segundos
+
+Los Vectores son iguales
+Tiempo de proceso con Tiles: 0,000249 segundos
+
+Los Vectores son iguales
+---------------------------------------------------------------
+Indice de ejecucion: 7
+Tamaño del vector: 64
+tiempo de proceso Secuencial: 0,000001 segundos
+Tiempo de paralelo basico: 0,000259 segundos
+
+Los Vectores son iguales
+Tiempo de proceso con variable constante y Caching: 0,000251 segundos
+
+Los Vectores son iguales
+Tiempo de proceso con Tiles: 0,000250 segundos
+
+Los Vectores son iguales
+---------------------------------------------------------------
+Indice de ejecucion: 8
+Tamaño del vector: 128
+tiempo de proceso Secuencial: 0,000003 segundos
+Tiempo de paralelo basico: 0,000258 segundos
+
+Los Vectores son iguales
+Tiempo de proceso con variable constante y Caching: 0,000248 segundos
+
+Los Vectores son iguales
+Tiempo de proceso con Tiles: 0,000248 segundos
+
+Los Vectores son iguales
+---------------------------------------------------------------
+Indice de ejecucion: 9
+Tamaño del vector: 256
+tiempo de proceso Secuencial: 0,000005 segundos
+Tiempo de paralelo basico: 0,000257 segundos
+
+Los Vectores son iguales
+Tiempo de proceso con variable constante y Caching: 0,000248 segundos
+
+Los Vectores son iguales
+Tiempo de proceso con Tiles: 0,000248 segundos
+
+Los Vectores son iguales
+---------------------------------------------------------------
+Indice de ejecucion: 10
+Tamaño del vector: 512
+tiempo de proceso Secuencial: 0,000010 segundos
+Tiempo de paralelo basico: 0,000447 segundos
+
+Los Vectores son iguales
+Tiempo de proceso con variable constante y Caching: 0,000249 segundos
+
+Los Vectores son iguales
+Tiempo de proceso con Tiles: 0,000248 segundos
+
+Los Vectores son iguales
+---------------------------------------------------------------
+Indice de ejecucion: 11
+Tamaño del vector: 1024
+tiempo de proceso Secuencial: 0,000019 segundos
+Tiempo de paralelo basico: 0,000456 segundos
+
+Los Vectores son iguales
+Tiempo de proceso con variable constante y Caching: 0,000258 segundos
+
+Los Vectores son iguales
+Tiempo de proceso con Tiles: 0,000249 segundos
+
+Los Vectores son iguales
+---------------------------------------------------------------
+Indice de ejecucion: 12
+Tamaño del vector: 2048
+tiempo de proceso Secuencial: 0,000038 segundos
+Tiempo de paralelo basico: 0,000449 segundos
+
+Los Vectores son iguales
+Tiempo de proceso con variable constante y Caching: 0,000252 segundos
+
+Los Vectores son iguales
+Tiempo de proceso con Tiles: 0,000251 segundos
+
+Los Vectores son iguales
+---------------------------------------------------------------
+Indice de ejecucion: 13
+Tamaño del vector: 4096
+tiempo de proceso Secuencial: 0,000077 segundos
+Tiempo de paralelo basico: 0,000455 segundos
+
+Los Vectores son iguales
+Tiempo de proceso con variable constante y Caching: 0,000268 segundos
+
+Los Vectores son iguales
+Tiempo de proceso con Tiles: 0,000257 segundos
+
+Los Vectores son iguales
+---------------------------------------------------------------
+Indice de ejecucion: 14
+Tamaño del vector: 8192
+tiempo de proceso Secuencial: 0,000153 segundos
+Tiempo de paralelo basico: 0,000466 segundos
+
+Los Vectores son iguales
+Tiempo de proceso con variable constante y Caching: 0,000273 segundos
+
+Los Vectores son iguales
+Tiempo de proceso con Tiles: 0,000267 segundos
+
+Los Vectores son iguales
+---------------------------------------------------------------
+Indice de ejecucion: 15
+Tamaño del vector: 16384
+tiempo de proceso Secuencial: 0,000304 segundos
+Tiempo de paralelo basico: 0,000488 segundos
+
+Los Vectores son iguales
+Tiempo de proceso con variable constante y Caching: 0,000289 segundos
+
+Los Vectores son iguales
+Tiempo de proceso con Tiles: 0,000287 segundos
+
+Los Vectores son iguales
+---------------------------------------------------------------
+Indice de ejecucion: 16
+Tamaño del vector: 32768
+tiempo de proceso Secuencial: 0,000607 segundos
+Tiempo de paralelo basico: 0,000532 segundos
+
+Los Vectores son iguales
+Tiempo de proceso con variable constante y Caching: 0,000353 segundos
+
+Los Vectores son iguales
+Tiempo de proceso con Tiles: 0,000345 segundos
+
+Los Vectores son iguales
+---------------------------------------------------------------
+Indice de ejecucion: 17
+Tamaño del vector: 65536
+tiempo de proceso Secuencial: 0,001213 segundos
+Tiempo de paralelo basico: 0,000608 segundos
+
+Los Vectores son iguales
+Tiempo de proceso con variable constante y Caching: 0,000430 segundos
+
+Los Vectores son iguales
+Tiempo de proceso con Tiles: 0,000430 segundos
+
+Los Vectores son iguales
+---------------------------------------------------------------
+Indice de ejecucion: 18
+Tamaño del vector: 131072
+tiempo de proceso Secuencial: 0,002522 segundos
+Tiempo de paralelo basico: 0,000816 segundos
+
+Los Vectores son iguales
+Tiempo de proceso con variable constante y Caching: 0,000602 segundos
+
+Los Vectores son iguales
+Tiempo de proceso con Tiles: 0,000596 segundos
+
+Los Vectores son iguales
+---------------------------------------------------------------
+Indice de ejecucion: 19
+Tamaño del vector: 262144
+tiempo de proceso Secuencial: 0,005035 segundos
+Tiempo de paralelo basico: 0,001378 segundos
+
+Los Vectores son iguales
+Tiempo de proceso con variable constante y Caching: 0,001165 segundos
+
+Los Vectores son iguales
+Tiempo de proceso con Tiles: 0,001142 segundos
+
+Los Vectores son iguales
+---------------------------------------------------------------
+Indice de ejecucion: 20
+Tamaño del vector: 524288
+tiempo de proceso Secuencial: 0,010028 segundos
+Tiempo de paralelo basico: 0,001955 segundos
+
+Los Vectores son iguales
+Tiempo de proceso con variable constante y Caching: 0,001747 segundos
+
+Los Vectores son iguales
+Tiempo de proceso con Tiles: 0,001730 segundos
+
+Los Vectores son iguales
+---------------------------------------------------------------
+Indice de ejecucion: 21
+Tamaño del vector: 1048576
+tiempo de proceso Secuencial: 0,019855 segundos
+Tiempo de paralelo basico: 0,002857 segundos
+
+Los Vectores son iguales
+Tiempo de proceso con variable constante y Caching: 0,002638 segundos
+
+Los Vectores son iguales
+Tiempo de proceso con Tiles: 0,002595 segundos
+
+Los Vectores son iguales
+---------------------------------------------------------------
+Indice de ejecucion: 22
+Tamaño del vector: 2097152
+tiempo de proceso Secuencial: 0,039630 segundos
+Tiempo de paralelo basico: 0,004885 segundos
+
+Los Vectores son iguales
+Tiempo de proceso con variable constante y Caching: 0,004593 segundos
+
+Los Vectores son iguales
+Tiempo de proceso con Tiles: 0,004487 segundos
+
+Los Vectores son iguales
+---------------------------------------------------------------
+Indice de ejecucion: 23
+Tamaño del vector: 4194304
+tiempo de proceso Secuencial: 0,078788 segundos
+Tiempo de paralelo basico: 0,008477 segundos
+
+Los Vectores son iguales
+Tiempo de proceso con variable constante y Caching: 0,008103 segundos
+
+Los Vectores son iguales
+Tiempo de proceso con Tiles: 0,008022 segundos
+
+Los Vectores son iguales
+---------------------------------------------------------------
+Indice de ejecucion: 24
+Tamaño del vector: 8388608
+tiempo de proceso Secuencial: 0,157195 segundos
+Tiempo de paralelo basico: 0,015607 segundos
+
+Los Vectores son iguales
+Tiempo de proceso con variable constante y Caching: 0,015412 segundos
+
+Los Vectores son iguales
+Tiempo de proceso con Tiles: 0,014943 segundos
+
+Los Vectores son iguales
+---------------------------------------------------------------
+Indice de ejecucion: 25
+Tamaño del vector: 16777216
+tiempo de proceso Secuencial: 0,314566 segundos
+Tiempo de paralelo basico: 0,029751 segundos
+
+Los Vectores son iguales
+Tiempo de proceso con variable constante y Caching: 0,029207 segundos
+
+Los Vectores son iguales
+Tiempo de proceso con Tiles: 0,028774 segundos
+
+Los Vectores son iguales
+---------------------------------------------------------------
+Indice de ejecucion: 26
+Tamaño del vector: 33554432
+tiempo de proceso Secuencial: 0,628815 segundos
+Tiempo de paralelo basico: 0,057996 segundos
+
+Los Vectores son iguales
+Tiempo de proceso con variable constante y Caching: 0,057477 segundos
+
+Los Vectores son iguales
+Tiempo de proceso con Tiles: 0,056393 segundos
+
+Los Vectores son iguales
+---------------------------------------------------------------
+Indice de ejecucion: 27
+Tamaño del vector: 67108864
+tiempo de proceso Secuencial: 1,261376 segundos
+Tiempo de paralelo basico: 0,117033 segundos
+
+Los Vectores son iguales
+Tiempo de proceso con variable constante y Caching: 0,114978 segundos
+
+Los Vectores son iguales
+Tiempo de proceso con Tiles: 0,135989 segundos
+
+Los Vectores son iguales
+---------------------------------------------------------------
+Indice de ejecucion: 28
+Tamaño del vector: 134217728
+tiempo de proceso Secuencial: 2,516980 segundos
+Tiempo de paralelo basico: 0,228496 segundos
+
+Los Vectores son iguales
+Tiempo de proceso con variable constante y Caching: 0,227140 segundos
+
+Los Vectores son iguales
+Tiempo de proceso con Tiles: 0,222983 segundos
+
+Los Vectores son iguales
+---------------------------------------------------------------
+Indice de ejecucion: 29
+Tamaño del vector: 268435456
+tiempo de proceso Secuencial: 5,034211 segundos
+Tiempo de paralelo basico: 0,455128 segundos
+
+Los Vectores son iguales
+Tiempo de proceso con variable constante y Caching: 0,452313 segundos
+
+Los Vectores son iguales
+Tiempo de proceso con Tiles: 0,445472 segundos
+
+Los Vectores son iguales
+---------------------------------------------------------------
+Indice de ejecucion: 30
+Tamaño del vector: 536870912
+tiempo de proceso Secuencial: 10,068286 segundos
+Tiempo de paralelo basico: 0,909716 segundos
+
+Los Vectores son iguales
+Tiempo de proceso con variable constante y Caching: 0,903635 segundos
+
+Los Vectores son iguales
+Tiempo de proceso con Tiles: 0,889007 segundos
+
+Los Vectores son iguales
