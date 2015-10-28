@@ -15,7 +15,7 @@ int main()
   double elapsedSequential;
   
   Mat image;
-  image = imread("inputs/img1.jpg",0);   // El cero significa que carga la imagen en escala de grises
+  image = imread("inputs/img1.jpg",0);   // Se utiliza el parametro en cero para imagen en escla de grises y el 1 para imagen a color
   Size s = image.size();
   int Row = s.width;
   int Col = s.height;
@@ -31,15 +31,15 @@ int main()
   img = image.data;
 
   cout<<"... Secuencial ...\n"<<endl;
-  Mat grad_x;
+  Mat imagen_salida;
   
   start = clock();
   
-  Sobel(image, grad_x, CV_8UC1, 1, 0, 3, 1, 0, BORDER_DEFAULT);
+  Sobel(image, imagen_salida, CV_8UC1, 1, 0, 3, 1, 0, BORDER_DEFAULT);
   
   finish = clock();
 
-  imwrite("./outputs/1059448819.png",grad_x);
+  imwrite("./outputs/1059448819.png",imagen_salida);
 
   elapsedSequential = (((double) (finish - start)) / CLOCKS_PER_SEC );
   cout<< "El proceso secuencial tomo: " << elapsedSequential << " en ejecutar\n "<< endl;
