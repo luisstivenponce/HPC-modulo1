@@ -129,8 +129,8 @@ int main()
 
   cudaDeviceSynchronize();
 
-  sobelFilterSequential(d_imageOutput, width, height, 3, GX, GY, h_imageOutput);
-  /*
+  //sobelFilterSequential(d_imageOutput, width, height, 3, GX, GY, h_imageOutput);
+  
   Mat gray_image;
   gray_image.create(height, width, CV_8UC1);
   gray_image.data = h_imageOutput;
@@ -141,7 +141,7 @@ int main()
   convertScaleAbs(grad_x, abs_grad_x);
   
   imwrite("./outputs/1059448819.png",gray_image);
-  */
+  
   cudaFree(d_dataRawImage);
   cudaFree(d_imageOutput);
   
