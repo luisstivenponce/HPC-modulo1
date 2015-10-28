@@ -13,7 +13,7 @@ int main()
 {
   clock_t start, finish; 
   double elapsedSequential;
-  
+  double Tpromedio = 0;
   Mat image;
   image = imread("inputs/img1.jpg",0);   // Se utiliza el parametro en cero para imagen en escla de grises y el 1 para imagen a color
   Size s = image.size();
@@ -31,6 +31,8 @@ int main()
   img = image.data;
 
   cout<<"... Secuencial ...\n"<<endl;
+  for(int i=0; i < 20; i++){
+    cout <<"Ejecucion :"<< i+1<<endl;
   Mat imagen_salida;
   
   start = clock();
@@ -43,6 +45,9 @@ int main()
 
   elapsedSequential = (((double) (finish - start)) / CLOCKS_PER_SEC );
   cout<< "El proceso secuencial tomo: " << elapsedSequential << " en ejecutar\n "<< endl;
-
+  Tpromedio = Tpromedio + elapsedSequential;
+}
+Tpromedio = Tpromedio/20;
+  cout<<"Tiempo de ejecucion Promedio: " << Tpromedio;
   return 0;
 }
