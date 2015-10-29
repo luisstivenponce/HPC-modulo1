@@ -61,7 +61,7 @@ int main()
 {
     cudaError_t error = cudaSuccess;
     clock_t start, end, startGPU, endGPU;
-    double cpu_time_used, gpu_time_used,tiempo_prome_cpu,tiempo_prome_gpu;
+    double cpu_time_used, gpu_time_used,TpromedioCPU = 0,TpromedioGPU = 0;
 
     char h_M[] = {-1, 0, 1, -2, 0, 2, -1, 0, 1};    // Gx
     char v_M[] = {-1, -2, -1, 0, 0, 0, 1, 2, 1};    // Gy
@@ -70,7 +70,7 @@ int main()
 
     unsigned char *dataRawImage, *d_dataRawImage, *d_imageOutput, *h_imageOutput, *d_sobelOutput;
     Mat image;
-    image = imread("./inputs/img5.jpg", 1);
+    image = imread("./inputs/img1.jpg", 1);
 
     if(!image.data)
     {
@@ -118,13 +118,15 @@ int main()
 
     dataRawImage = image.data;
 
-    startGPU = clock();
-    error = cudaMemcpy(d_dataRawImage, dataRawImage, size, cudaMemcpyHostToDevice);
-    if(error != cudaSuccess)
-    {
+  for(int i = 0; i < 20; i++){
+    	printf("--------------------- Ejecucion %i -------------------\n\n",i+1);
+    	startGPU = clock();
+    	error = cudaMemcpy(d_dataRawImage, dataRawImage, size, cudaMemcpyHostToDevice);
+    	if(error != cudaSuccess)
+    	{
         printf("Error copiando los datos de dataRawImage a d_dataRawImage \n");
         exit(-1);
-    }
+    	}
 
     error = cudaMemcpy(d_M, h_M, sizeof(char)*9, cudaMemcpyHostToDevice);
     if(error != cudaSuccess)
@@ -144,8 +146,8 @@ int main()
     cudaMemcpy(h_imageOutput, d_sobelOutput, sizeGray, cudaMemcpyDeviceToHost);
     
   	endGPU = clock();
-   	gpu_time_used = (((double) (endGPU - startGPU)) / CLOCKS_PER_SEC );
-    printf("Tiempo de ejecucion de la GPU: %f\n", gpu_time_used);
+   	
+    
   
     Mat gray_image;
     gray_image.create(height, width, CV_8UC1);
@@ -159,13 +161,22 @@ int main()
   
     end = clock();
 		cpu_time_used = (((double) (end - start)) / CLOCKS_PER_SEC );
-  	printf("Tiempo de ejecucion de la CPU: %f", cpu_time_used);
+  	
 
     imwrite("./outputs/1059448819.png",gray_image);
 
     gpu_time_used = ((double) (endGPU - startGPU)) / CLOCKS_PER_SEC;
     cpu_time_used = ((double) (end - start)) /CLOCKS_PER_SEC;
-
+    printf("Tiempo de ejecucion de la GPU: %f\n", gpu_time_used);
+    printf("Tiempo de ejecucion de la CPU: %f\n\n", cpu_time_used);
+    TpromedioGPU = TpromedioGPU + gpu_time_used;
+    TpromedioCPU = TpromedioCPU + cpu_time_used;  	
+  }
+  	TpromedioGPU = TpromedioGPU / 20;
+  	TpromedioCPU = TpromedioCPU / 20;
+  	printf("\n-------------------------------------------------------------------------\n\n");
+  	printf("Tiempo promedio de ejecucion de la GPU: %f\n", TpromedioGPU);
+  	printf("Tiempo promedio de ejecucion de la CPU: %f\n", TpromedioCPU);
     cudaFree(d_dataRawImage);
     cudaFree(d_imageOutput);
     cudaFree(d_M);
