@@ -161,7 +161,7 @@ int main()
 		cpu_time_used = (((double) (end - start)) / CLOCKS_PER_SEC );
   	printf("Tiempo de ejecucion de la CPU: %f", cpu_time_used);
 
-    imwrite("./outputs/1088273734.png",gray_image);
+    imwrite("./outputs/1059448819.png",gray_image);
 
     gpu_time_used = ((double) (endGPU - startGPU)) / CLOCKS_PER_SEC;
     cpu_time_used = ((double) (end - start)) /CLOCKS_PER_SEC;
