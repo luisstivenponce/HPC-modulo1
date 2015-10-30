@@ -215,7 +215,7 @@ int main()
   //imwrite("./outputs/1053823121.png",grad_x);
   elapsedSequential = (((double) (finish - start)) / CLOCKS_PER_SEC );
   TpromedioSecuencial = TpromedioSecuencial + elapsedSequential;
-  printf("Tiempo de proceso en secuencial %f:\n",elapsedSequential);
+  printf("Tiempo de proceso en secuencial: %f\n",elapsedSequential);
 
   for(op = 1; op < 4; op++){
   start = clock();
@@ -224,15 +224,15 @@ int main()
   elapsedParallel = (((double) (finish - start)) / CLOCKS_PER_SEC );
     if(op == 1){
       TpromedioGlobal = TpromedioGlobal + elapsedParallel;
-    	printf("Tiempo de proceso en paralelo Global %f:\n",elapsedParallel);
+    	printf("Tiempo de proceso en paralelo Global: %f\n",elapsedParallel);
     }
     else if(op ==2){
       TpromedioConstante = TpromedioConstante + elapsedParallel; 
-    	printf("Tiempo de proceso en paralelo Constante %f:\n",elapsedParallel);
+    	printf("Tiempo de proceso en paralelo Constante: %f\n",elapsedParallel);
     }
     else {
       TpromedioCompartida = TpromedioCompartida + elapsedParallel;
-    printf("Tiempo de proceso en paralelo Compartida %f:\n\n",elapsedParallel);
+    printf("Tiempo de proceso en paralelo Compartida: %f\n\n",elapsedParallel);
     	}
   }
    
@@ -242,6 +242,8 @@ int main()
   TpromedioConstante = TpromedioConstante / 20;
   TpromedioCompartida = TpromedioCompartida /20;
   
+  
+  printf("----------------------------------------------------------\n");
   printf("Tiempo promedio Secuencial: %f\n",TpromedioSecuencial);
   printf("Tiempo promedio Paralelo Men Global: %f\n",TpromedioGlobal);
   printf("Tiempo promedio Paralelo Men Constante: %f\n",TpromedioConstante);
