@@ -10,6 +10,7 @@
 #define BLOCK_SIZE 32
 
 __constant__ char M[Mask_size*Mask_size];
+__constant__ char M1[Mask_size*Mask_size];
 
 using namespace std;
 using namespace cv;
@@ -67,7 +68,9 @@ __global__ void convolution2DConstantMemKernel(unsigned char *In,unsigned char *
    unsigned int col = blockIdx.x*blockDim.x+threadIdx.x;
 
    int Pvalue = 0;
-
+   int PvalueY = 0; 		
+   double SUM = 0;	
+	
    int N_start_point_row = row - (Mask_Width/2);
    int N_start_point_col = col - (Mask_Width/2);
 
@@ -79,11 +82,13 @@ __global__ void convolution2DConstantMemKernel(unsigned char *In,unsigned char *
          &&(N_start_point_row + i >=0 && N_start_point_row + i < Colimg))
          {
            Pvalue += In[(N_start_point_row + i)*Rowimg+(N_start_point_col + j)] * M[i*Mask_Width+j];
+		   PvalueY += In[(N_start_point_row + i)*Rowimg+(N_start_point_col + j)] * M1[i*Mask_Width+j];
          }
        }
     }
+	 SUM = sqrt(pow((double) Pvalue, 2) + pow((double) PvalueY, 2));
 
-   Out[row*Rowimg+col] = clamp(Pvalue);
+   Out[row*Rowimg+col] = clamp(SUM);
 }
 
 // Memoria Compartida - Tiles
@@ -192,7 +197,7 @@ int main()
   //double tiempoSecuencial;
   int Mask_Width =  Mask_size;
   Mat image;
-  image = imread("inputs/img1.jpg",0);   // Con cero indico que la cargue en escala de grises
+  image = imread("inputs/img2.jpg",0);   // Con cero indico que la cargue en escala de grises
   // Opcion para el llamado a paralelo
   //int op = 1;
 
@@ -222,7 +227,7 @@ int main()
   cout<< "El tiempo secuencial fue de: " << tiempoSecuencial << " segundos "<< endl;
 */
 	start = clock();
-	KernelCalls(image,img,imgOut,h_Mask,v_Mask,Mask_Width,Row,Col,1);
+	KernelCalls(image,img,imgOut,h_Mask,v_Mask,Mask_Width,Row,Col,2);
 	finish = clock();
 	tiempoParalelo = (((double) (finish - start)) / CLOCKS_PER_SEC );
 	cout<< "El tiempo paralelo fue de: " << tiempoParalelo << " segundos "<< endl;
