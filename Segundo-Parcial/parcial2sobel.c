@@ -182,10 +182,10 @@ int main()
 
   clock_t start, finish; //Clock variables
   double elapsedParallel;
-  double elapsedSequential,TpromedioSecuencial = 0;
+  double elapsedSequential,TpromedioSecuencial = 0,TpromedioGlobal = 0, TpromedioConstante = 0, TpromedioCompartida = 0 ;
   int Mask_Width =  Mask_size;
   Mat image;
-  image = imread("inputs/img4.jpg",0);   // Read the file, 0 means we already load de image in gray scale
+  image = imread("inputs/img1.jpg",0);   // se utiliza el parametro 0 para recibir la imagen en escala de grices y el 1 para colores
   int op = 3;
   Size s = image.size();
   int Row = s.width;
@@ -207,7 +207,7 @@ int main()
 
   //cout<<"Serial result"<<endl;
   for(int i = 0 ;i < 20; i++){
-    printf("--------------Ejecucion %i-----------\n",i);	
+    printf("--------------------- Ejecucion %i ----------------------------------\n",i+1);	
   	Mat grad_x;
   	start = clock();
   	Sobel(image,grad_x,CV_8UC1,1,0,3,1,0,BORDER_DEFAULT);
@@ -223,17 +223,30 @@ int main()
   finish = clock();
   elapsedParallel = (((double) (finish - start)) / CLOCKS_PER_SEC );
     if(op == 1){
+      TpromedioGlobal = TpromedioGlobal + elapsedParallel;
     	printf("Tiempo de proceso en paralelo Global %f:\n",elapsedParallel);
     }
     else if(op ==2){
+      TpromedioConstante = TpromedioConstante + elapsedParallel; 
     	printf("Tiempo de proceso en paralelo Constante %f:\n",elapsedParallel);
     }
     else {
-    printf("Tiempo de proceso en paralelo Compartido %f:\n\n",elapsedParallel);
+      TpromedioCompartida = TpromedioCompartida + elapsedParallel;
+    printf("Tiempo de proceso en paralelo Compartida %f:\n\n",elapsedParallel);
     	}
   }
    
   }
+  TpromedioSecuencial = TpromedioSecuencial /20;
+  TpromedioGlobal = TpromedioGlobal / 20;
+  TpromedioConstante = TpromedioConstante / 20;
+  TpromedioCompartida = TpromedioCompartida /20;
+  
+  printf("Tiempo promedio Secuencial: %f\n",TpromedioSecuencial);
+  printf("Tiempo promedio Paralelo Men Global: %f\n",TpromedioGlobal);
+  printf("Tiempo promedio Paralelo Men Constante: %f\n",TpromedioConstante);
+  printf("Tiempo promedio Paralelo Men Compartida: %f\n",TpromedioCompartida);
+  
   Mat gray_image;
   gray_image.create(Col,Row,CV_8UC1);
   gray_image.data = imgOut;
