@@ -15,8 +15,6 @@ using namespace std;
 using namespace cv;
 
 
-//============ TO HOLD THE VALUES AND DON LET THEM GET OUT OF THE DOMAIN =======
-
 __device__ unsigned char clamp(int value)//__device__ because it's called by a kernel
 {
     if(value < 0)
@@ -28,9 +26,9 @@ __device__ unsigned char clamp(int value)//__device__ because it's called by a k
 }
 
 
-//============= CONVOLUTION KERNEL WITH GLOBAL MEM ============================
+//============= Convolucion kernel con memoria Global ============================
 
-__global__ void convolution2DGlobalMemKernel(unsigned char *In,char *Mask, unsigned char *Out,int Mask_Width,int Rowimg,int Colimg)
+__global__ void KernelMenGlobalCV2D(unsigned char *In,char *Mask, unsigned char *Out,int Mask_Width,int Rowimg,int Colimg)
 {
 
    unsigned int row = blockIdx.y*blockDim.y+threadIdx.y;
@@ -57,9 +55,9 @@ __global__ void convolution2DGlobalMemKernel(unsigned char *In,char *Mask, unsig
 
 }
 
-//============== CONVOLUTION KERNEL WITH CONSTANT MEM =========================
+//============== Convolucion kernel con memoria Constante=========================
 
-__global__ void convolution2DConstantMemKernel(unsigned char *In,unsigned char *Out,int Mask_Width,int Rowimg,int Colimg)
+__global__ void KernelMenConstanteCV2D(unsigned char *In,unsigned char *Out,int Mask_Width,int Rowimg,int Colimg)
  {
    unsigned int row = blockIdx.y*blockDim.y+threadIdx.y;
    unsigned int col = blockIdx.x*blockDim.x+threadIdx.x;
@@ -84,9 +82,9 @@ __global__ void convolution2DConstantMemKernel(unsigned char *In,unsigned char *
    Out[row*Rowimg+col] = clamp(Pvalue);
 }
 
-//============== CONVOLUTION KERNEL WITH SHARED MEM =========================
+//============== Convolucion kernel con memoria compartida ========================
 
-__global__ void convolution2DSharedMemKernel(unsigned char *imageInput,unsigned char *imageOutput,
+__global__ void KernelMenCompartidaCV2D(unsigned char *imageInput,unsigned char *imageOutput,
  int maskWidth, int width, int height)
 {
     __shared__ float N_ds[TILE_SIZE + Mask_size - 1][TILE_SIZE + Mask_size - 1];
@@ -126,9 +124,9 @@ __global__ void convolution2DSharedMemKernel(unsigned char *imageInput,unsigned 
     __syncthreads();
 }
 
-//============ KERNEL CALL =====================================================
+//============ Kernel de llamado =====================================================
 
-void convolution2DKernelCall(Mat image,unsigned char *In,unsigned char *Out,char *h_Mask,
+void KenerLlamadoCV2D(Mat image,unsigned char *In,unsigned char *Out,char *h_Mask,
   int Mask_Width,int Row,int Col, int op)
 {
   // Variables
@@ -154,15 +152,15 @@ void convolution2DKernelCall(Mat image,unsigned char *In,unsigned char *Out,char
   {
     case 1:
     //cout<<"2D convolution using GLOBAL mem"<<endl;
-    convolution2DGlobalMemKernel<<<dimGrid,dimBlock>>>(d_In,d_Mask,d_Out,Mask_Width,Row,Col);
+    KernelMenGlobalCV2D<<<dimGrid,dimBlock>>>(d_In,d_Mask,d_Out,Mask_Width,Row,Col);
     break;
     case 2:
     //cout<<"2D convolution using CONSTANT mem"<<endl;
-    convolution2DConstantMemKernel<<<dimGrid,dimBlock>>>(d_In,d_Out,Mask_Width,Row,Col);
+    KernelMenConstanteCV2D<<<dimGrid,dimBlock>>>(d_In,d_Out,Mask_Width,Row,Col);
     break;
     case 3:
     //cout<<"2D convolution using SHARED mem"<<endl;
-    convolution2DSharedMemKernel<<<dimGrid,dimBlock>>>(d_In,d_Out,Mask_Width,Row,Col);
+    KernelMenCompartidaCV2D<<<dimGrid,dimBlock>>>(d_In,d_Out,Mask_Width,Row,Col);
     break;
   }
 
@@ -219,7 +217,7 @@ int main()
 
   for(op = 1; op < 4; op++){
   start = clock();
-  convolution2DKernelCall(image,img,imgOut,h_Mask,Mask_Width,Row,Col,op);
+  KenerLlamadoCV2D(image,img,imgOut,h_Mask,Mask_Width,Row,Col,op);
   finish = clock();
   elapsedParallel = (((double) (finish - start)) / CLOCKS_PER_SEC );
     if(op == 1){
